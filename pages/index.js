@@ -1,3 +1,4 @@
+import Image from 'next/image'
 function Blog({ posts }) {
   return (
     <div>
@@ -11,7 +12,7 @@ function Blog({ posts }) {
         <div>{post.id}
 
         <div className="flex flex-wrap -m-1 md:-m-2 container px-5 py-2 mx-auto lg:pt-12 lg:px-32 overflow-hidden">
-        <img className=" block object-cover object-center w-full h-full rounded-lg" src= {post.urls.raw}></img> 
+        <Image className=" block object-cover object-center w-full h-full rounded-lg" src= {post.urls.raw} /> 
         </div>
  
          
