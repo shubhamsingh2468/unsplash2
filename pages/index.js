@@ -1,6 +1,8 @@
-import Image from 'next/image'
 function Blog({ posts }) {
+  const value = posts.value;
   return (
+    <div>
+      
     <div>
       <div className="container mx-auto px-5 2xl:px-0">
         <h1 className="text-slate-800 font-bold text-3xl md:text-4xl lg:text-6xl my-10 lg:mt-20 lg:mb-14">
@@ -10,14 +12,15 @@ function Blog({ posts }) {
 </div>
       {posts.map((post) => (
         <div>{post.id}
-
+        <div>
+        <li key={value}>
+      {value}
+    </li>
+    </div>
         <div className="flex flex-wrap -m-1 md:-m-2 container px-5 py-2 mx-auto lg:pt-12 lg:px-32 overflow-hidden">
-        <Image className=" block object-cover object-center w-full h-full rounded-lg" src= {post.urls.raw} /> 
+        <img className=" block object-cover object-center w-full h-full rounded-lg" alt="" src= {post.urls.raw}></img> 
         </div>
- 
-         
-        
-  </div>
+ </div>
         
 
         
@@ -27,6 +30,7 @@ function Blog({ posts }) {
 
         
       ))}
+    </div>
     </div>
     
     
@@ -54,3 +58,11 @@ export async function getStaticProps() {
 }
 
 export default Blog
+
+        
+       
+
+        
+
+        
+     
